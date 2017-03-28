@@ -16,6 +16,7 @@ from model import total_variation, extract, normlize_grad, gram
 from utils import im_preprocess_vgg, im_deprocess_vgg
 
 str2list = lambda x: x.split(';')
+str2bool = lambda x:x.lower() == 'true'
 
 def shape_color(shape, color):
     y = rgb2yuv(shape)[:,:,:1]
@@ -66,12 +67,12 @@ def main():
     parser.add_argument('--style_weight', type=float, default=100, help='Weight for style loss')
     parser.add_argument('--tv_weight', type=float, default=1e-3, help='Weight for tv loss')
     parser.add_argument('--n_iteration', type=int, default=1000, help='# of iterations')
-    parser.add_argument('--normalize_gradients', type=bool, default=False, help='Normalize gradients if True')
-    parser.add_argument('--rand_init', type=bool, default=True, help='Random init input if True')
+    parser.add_argument('--normalize_gradients', type=str2bool, default=False, help='Normalize gradients if True')
+    parser.add_argument('--rand_init', type=str2bool, default=True, help='Random init input if True')
     parser.add_argument('--content_load_size', type=int, default=512, help='Scale content image to load_size')
     parser.add_argument('--style_load_size', type=int, default=512, help='Scale style image to load_size')
-    parser.add_argument('--original_color', type=bool, default=False, help='Same color with content image if True')
-    parser.add_argument('--style_color', type=bool, default=False, help='Same color with style image if True')
+    parser.add_argument('--original_color', type=str2bool, default=False, help='Same color with content image if True')
+    parser.add_argument('--style_color', type=str2bool, default=False, help='Same color with style image if True')
 
     parser.add_argument('--content_layers', type=str2list, default='relu4_2', help='Layers for content_loss, sperated by ;')
     parser.add_argument('--style_layers', type=str2list, default='relu1_1;relu2_1;relu3_1;relu4_1;relu5_1', help='Layers for style_loss, sperated by ;')
