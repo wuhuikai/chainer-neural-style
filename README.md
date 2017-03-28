@@ -16,21 +16,32 @@ python caffe_model_2_pickle.py
 *Note*: `python neural_style -h` for more details.
 ### Your Gallery
 * Content Image
-![](images/towernight.jpg)
+
+  ![](images/towernight.jpg)
 * Style Image
-![](images/Starry_Night.jpg)
+
+  ![](images/Starry_Night.jpg)
 * Result
   * `--original_color False --style_color False`
+  
   ![](images/result/towernight_with_style(s)_Starry_Night.png)
+  
   * `--original_color True`
+  
   ![](images/result/OrigColor_towernight_with_style(s)_Starry_Night.png)
+  
   * `--style_color True`
+  
   ![](images/result/StyleColor_towernight_with_style(s)_Starry_Night.png)
 
 * Content Image
-![](images/towernight.jpg)
+
+  ![](images/towernight.jpg)
 * Style Images
-![](images/Starry_Night.jpg)
-![](images/the_scream.jpg)
+
+  ![](images/Starry_Night.jpg)
+
+  ![](images/the_scream.jpg)
 * Result Image
-![](images/result/hrbrid_towernight_with_style(s)_Starry_Night_the_scream.png)
+
+  ![](images/result/hrbrid_towernight_with_style(s)_Starry_Night_the_scream.png)
